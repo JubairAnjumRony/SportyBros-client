@@ -40,12 +40,14 @@ const router = createBrowserRouter([
       element: <Register></Register>
     },
     {
-      path:"/addequipment",
+      path:"/addequipments",
       element:<PrivateRoute><AddEquipment></AddEquipment></PrivateRoute>,
+      // loader: () => fetch('http://localhost:3000/addequipments'),
     },
     {
-    path:"/allequipment",
+    path:"/allequipments",
     element:<AllEquipment></AllEquipment>,
+    loader: () => fetch('http://localhost:3000/allequipments'),
     },
     {
       path:"/details/:id",

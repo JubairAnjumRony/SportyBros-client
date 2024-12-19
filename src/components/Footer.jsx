@@ -2,8 +2,10 @@
 
 const Footer = () => {
     return (
-        <footer className="footer  footer-center bg-base-200 text-base-content rounded p-10">
-          <h1 className="font-black text-green">Sporty Bros</h1>
+        <footer className="footer  footer-center bg-base-200 text-base-content rounded p-5">
+          <h1 className="font-bold text-4xl">Sporty Bros</h1>
+          <p>
+          Email:webteam@sportybros.com</p>
         <nav className="grid grid-flow-col gap-4">
           <a className="link link-hover">About us</a>
           <a className="link link-hover">Contact</a>
