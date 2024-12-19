@@ -28,7 +28,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: < Home/>,
-        
+        loader: () => fetch('http://localhost:3000/allequipments'),
       },
     
     {
@@ -42,7 +42,7 @@ const router = createBrowserRouter([
     {
       path:"/addequipments",
       element:<PrivateRoute><AddEquipment></AddEquipment></PrivateRoute>,
-      // loader: () => fetch('http://localhost:3000/addequipments'),
+      
     },
     {
     path:"/allequipments",
@@ -52,6 +52,7 @@ const router = createBrowserRouter([
     {
       path:"/details/:id",
       element:<PrivateRoute><Details></Details></PrivateRoute>,
+      loader: ({params}) => fetch(`http://localhost:3000/details/${params.id}`),
 
     },
 
