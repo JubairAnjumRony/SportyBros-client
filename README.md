@@ -1,8 +1,11 @@
-# React + Vite
+*** Name of the website: Sporty-Bros ***
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+*** Live-URL:  ***
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+*** Features ***
+1. Authentication features
+2. <PrivateRoute> for protected pages
+3. connected to the server from client side
+4. Added hot toast and sweetAlert 2 for showing notifications
+5. Sort by price fuction 
+6. Implementation of dark/light features
