@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
+import Swal from "sweetalert2";
 
 const UpdateEquipments = () => {
     const { id } = useParams();
@@ -25,13 +26,18 @@ const UpdateEquipments = () => {
       })
         .then((res) => res.json())
         .then(() => {
-          toast.success("Equipment updated successfully!");
+        //   toast.success("Equipment updated successfully!");
+        Swal.fire({
+            title: "Updated successfully!",
+            icon: "success",
+            draggable: true
+          });
           navigate("/myequipments");
         })
         .catch((error) => toast.error("Failed to update equipment.",error.message));
     };
   
-    return equipment ? (
+    return equipment  (
       <form onSubmit={handleUpdate} className="container mx-auto max-w-md p-4 bg-white shadow-md rounded-md">
         <h1 className="text-2xl font-bold mb-4">Update Equipment</h1>
         <input
@@ -54,7 +60,7 @@ const UpdateEquipments = () => {
         />
         <button type="submit" className="bg-green-500 text-white px-4 py-2 rounded-md">Update</button>
       </form>
-    ) : (
+    )  (
       <div>Loading...</div>
     );
   };

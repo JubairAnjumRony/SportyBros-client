@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const MyEquipmentList = () => {
 
@@ -24,7 +25,24 @@ const MyEquipmentList = () => {
         })
           .then((res) => res.json())
           .then(() => {
-            toast.success("Equipment deleted successfully!");
+            // toast.success("Equipment deleted successfully!");
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!"
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  Swal.fire({
+                    title: "Deleted!",
+                    text: "Your file has been deleted.",
+                    icon: "success"
+                  });
+                }
+              });
             setEquipments(equipments.filter((item) => item._id !== id));
           })
           .catch((error) => toast.error("Failed to delete equipment.",error.message));
