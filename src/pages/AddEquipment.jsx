@@ -45,7 +45,7 @@ const AddEquipment = () => {
                     console.log('successfully added');
                     Swal.fire({
                         title: 'Success!',
-                        text: 'Coffee added successfully',
+                        text: 'Equipment added successfully',
                         icon: 'success',
                         confirmButtonText: 'Ok'
                     });
