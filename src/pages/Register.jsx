@@ -36,16 +36,13 @@ const Register = () => {
              toast.error("Password must contain at least one Number.");
              return ;
             }
-  
-    
-         
-      
-  
-      
-  
           console.log(name,email,password,photo);
-    //  create user
-  
+
+
+
+
+    //  create user with firebase
+   
     //       createUser(email,password)
     //       .then(result =>{
     //         console.log(result.user);
@@ -76,14 +73,16 @@ const Register = () => {
       updateUserProfile({ displayName: name, photoURL: photo })
         .then(() => {
           navigate("/");
+          toast.success("User registered successfully!");
         })
         .catch((err) => {
           console.log(err);
+          toast.error("Error updating profile.");
         });
     })
     .catch((err) => {
-      console.log(err);
-      // ..
+      console.log("user creation error",err);
+      toast.error("Failed to register. Please try again.");
     });
   };
   
@@ -97,12 +96,17 @@ const Register = () => {
             </div>
       <div className="card bg-base-100 w-full shrink-0 shadow-2xl p-4">
         <form onSubmit={handleRegister} className="card-body">
+
           <div className="form-control">
             <label className="label">
               <span className="label-text">Name</span>
             </label>
-            <input name="name" type="text" placeholder="Name" className="input input-bordered" required />
+            <input name="name" type="text" 
+            placeholder="Name" 
+            className="input input-bordered" required />
           </div>
+
+
           {/*image url  */}
           <div className="form-control">
               <label className="label">
@@ -121,14 +125,21 @@ const Register = () => {
             <label className="label">
               <span className="label-text">Email</span>
             </label>
-            <input name="email" type="email" placeholder="email" className="input input-bordered" required />
+            <input name="email"
+             type="email" placeholder="email" 
+             className="input input-bordered" 
+             required />
           </div>
+
           {/* password input */}
           <div className="form-control">
             <label className="label">
               <span className="label-text">Password</span>
             </label>
-            <input name="password" type="password" placeholder="password" className="input input-bordered" required />
+            <input name="password"
+             type="password" placeholder="password" 
+             className="input input-bordered"
+              required />
        
           </div>
           <div className="form-control mt-6">

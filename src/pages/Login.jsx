@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { toast } from "react-toastify";
 import { FaGoogle } from "react-icons/fa6";
@@ -7,7 +7,9 @@ import { FaGoogle } from "react-icons/fa6";
 const Login = () => {
     const navigate = useNavigate();
    const {signInUser,signInWithGoogle} = useContext(AuthContext)
- 
+   const location = useLocation();
+   const from = location.state?.from?.pathname || "/";
+
    const handleGoogleSignIn =() =>{
      signInWithGoogle()
      .then(result =>{
@@ -16,7 +18,7 @@ const Login = () => {
        navigate('/');
      })
      .catch(error=>{console.error("ERROR",error.message);
-     toast.error("wrong credentials");
+     toast.error("Google sign in Failed");
      });
  
    }
@@ -25,9 +27,9 @@ const Login = () => {
          e.preventDefault();
          const email = e.target.email.value;
          const password = e.target.password.value;
-         
-         
-         console.log(email,password);
+        console.log(email,password);
+
+
          signInUser(email,password)
          .then(result=>{
            console.log(result.user)
@@ -36,7 +38,14 @@ const Login = () => {
            navigate('/');
          })
          .catch(error=>{console.log('ERROR',error.message);
-         toast.error("wrong credentials");
+        //  toast.error("wrong credentials");
+         if (error.code === "auth/wrong-password") {
+          toast.error("Incorrect password. Please try again.");
+        } else if (error.code === "auth/user-not-found") {
+          toast.error("No account found with this email.");
+        } else {
+          toast.error("Login failed. Please try again.");
+        }
          });
  
      }
@@ -57,22 +66,26 @@ const Login = () => {
                  <label className="label">
                    <span className="label-text">Email</span>
                  </label>
-                 <input name="email" type="email" placeholder="email" className="input input-bordered" required />
+                 <input name="email" type="email" placeholder="email" 
+                 className="input input-bordered" required />
                </div>
                <div className="form-control">
                  <label className="label">
                    <span className="label-text">Password</span>
                  </label>
-                 <input name="password" type="password" placeholder="password" className="input input-bordered" autoComplete='current-password'required />
+                 <input name="password" type="password" placeholder="password" 
+                 className="input input-bordered" autoComplete='current-password'required />
                  <label className="label">
+
                    <Link to="/forgetpass" className="label-text-alt link link-hover">Forgot password?</Link>
                  </label>
                </div>
                <div className="form-control mt-6 ">
-                 <button type="submit" className="btn btn-primary">Login</button>
+                 <button type="submit" className="btn btn-primary disabled={false}">Login</button>
                  <hr className="border-2 my-4"></hr>
                  <p>
-                 <button onClick={()=>handleGoogleSignIn()} className='btn btn-warning w-full bg-red-600'><span className="text-black flex gap-2 justify-between">Login With Google <FaGoogle /></span></button>
+                 <button onClick={()=>handleGoogleSignIn()} className='btn btn-warning w-full
+                  bg-red-600  '><span className="text-black flex gap-2 justify-between">Login With Google <FaGoogle /></span></button>
                  </p>
                </div>
              </form>

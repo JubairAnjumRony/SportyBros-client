@@ -1,5 +1,6 @@
 import { createUserWithEmailAndPassword, 
-    onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, 
+    onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut,
+    updateProfile, 
     } from 'firebase/auth';
 
 import  { createContext, useEffect, useState } from 'react';
@@ -49,10 +50,10 @@ const AuthProvider = ({children}) => {
 ;
 
 
-//    const updateUserProfile = (updatedData) => {
-//        setLoading(true);
-//        return updateProfile(auth.currentUser, updatedData);
-//      };
+   const updateUserProfile = (updatedData) => {
+       setLoading(true);
+       return updateProfile(auth.currentUser, updatedData);
+     };
 
      function resetPass(email) {
        return sendPasswordResetEmail(auth, email);
@@ -63,7 +64,7 @@ const AuthProvider = ({children}) => {
            loading,
            signInWithGoogle,
            createUser,signInUser,user,setUser,signOutUser,
-           resetPass
+           resetPass,updateUserProfile
        }
    
    return (

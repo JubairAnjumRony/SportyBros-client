@@ -2,11 +2,14 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import { Link, NavLink } from "react-router-dom";
 import { Tooltip } from 'react-tooltip';
+import { FaUserCircle } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 
 
 
 const Navbar = () => {
+
 
   const [theme,setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
 
@@ -31,7 +34,9 @@ const Navbar = () => {
     const handleSignOut =() =>{
         signOutUser()
         .then(()=>{
-          console.log("user logged out successfully")
+          console.log("user logged out successfully");
+          toast.success("user logged out successfully");
+
         })
         .catch(error=>console.log("ERROR",error.message))
       }
@@ -130,43 +135,26 @@ const Navbar = () => {
   </svg>
 </label>
      
-{/* 
-          {user && user?.email ? (
-            <div className="flex flex-col gap-2">
-              <img className="w-10 rounded-full" src={user?.photoURL} alt="" />
-              <p>{user.displayName}</p>
-            </div>
-          ) : (
-            <img src={ ''} alt="" />
-          )} 
-        </div>
-        {user && user?.email ? (
-          <button   onClick={signOutUser} className="btn btn-neutral rounded-none">
-           signOut
-          </button>
-        ) : (
-          <Link to="/login" className="btn btn-neutral rounded-none">
-            Login
-          </Link>
-        )} */}
 
-{user && user?.email ? (
-  <div className="relative group">
+
+   {user && user?.email ? (
+     <div className="relative group">
    
-    <img
-      className="w-10 h-10 rounded-full cursor-pointer"
-      src={user?.photoURL}
-      alt="User Avatar"
-      title="Profile Picture"
-    />
+       <img
+         className="w-10 h-10 rounded-full cursor-pointer"
+         src={user?.photoURL}
+         alt="User Avatar"
+         title="Profile Picture"
+       />
 
-    <div className="absolute left-0 w-max px-2 py-1 bg-gray-700 text-white text-sm rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+       <div className="absolute left-0 w-max px-2 py-1 bg-gray-700 text-white text-sm 
+       rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200">
       {user?.displayName}
-    </div>
+       </div>
   </div>
-) : (
-  <img src={''} alt="" />
-)} 
+   ) : (
+  <a ><FaUserCircle className="text-3xl" /></a>
+   )} 
 
 
    {user && user?.email ? (
