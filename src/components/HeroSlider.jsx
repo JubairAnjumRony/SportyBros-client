@@ -9,7 +9,7 @@ import { Fade } from "react-awesome-reveal";
 
 const HeroSlider = () => {
     return (
-        <div className ="w-4/5 mx-auto ">
+        <div className =" ">
         <Swiper
       modules={[Autoplay, Navigation, Pagination, A11y]}
       spaceBetween={50}

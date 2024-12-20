@@ -5,11 +5,11 @@ const Equipment = ({equipment}) => {
     const {_id,image,itemName,categoryName,description,price,rating,customization,processingTime,stockStatus,userEmail,userName} = equipment;
     return (
         <div className = "bg-white p-4 shadow-md rounded-lg mb-8 my-11 ">
-            <div className = "relative">
+            <div className = "relative p-2">
                 <img src={image} alt={itemName} className = "w-full h-48 object-cover rounded-2xl"/>
              
             </div>
-            <div className = "  flex flex-col mt-2">
+            <div className = " flex flex-col mt-2">
                 <h1 className = "text-xl font-semibold">{itemName}</h1>
                 <p className = "text-sm text-gray-500">{description}</p>
                 <p className = "text-sm text-gray-500">Price:  ${price}</p>
