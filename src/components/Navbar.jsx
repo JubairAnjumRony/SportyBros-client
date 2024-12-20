@@ -5,6 +5,7 @@ import { Tooltip } from 'react-tooltip';
 
 
 
+
 const Navbar = () => {
 
   const [theme,setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
@@ -78,7 +79,9 @@ const Navbar = () => {
             {links}
             </ul>
           </div>
+       
           <NavLink to ="/"className="btn btn-ghost text-xl">Sporty Bros</NavLink>
+          
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">

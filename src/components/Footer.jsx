@@ -1,9 +1,9 @@
-
+import { Fade } from "react-awesome-reveal";
 
 const Footer = () => {
     return (
         <footer className="footer  footer-center bg-base-200 text-base-content rounded p-5">
-          <h1 className="font-bold text-4xl">Sporty Bros</h1>
+          <Fade><h1 className="font-bold text-4xl">Sporty Bros</h1> </Fade>
           <p>
           Email:webteam@sportybros.com</p>
         <nav className="grid grid-flow-col gap-4">

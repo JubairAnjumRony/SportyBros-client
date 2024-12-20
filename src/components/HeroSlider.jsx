@@ -5,6 +5,7 @@ import "swiper/css/pagination";
 import {Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
 import { A11y, Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { Fade } from "react-awesome-reveal";
 
 const HeroSlider = () => {
     return (
@@ -13,7 +14,7 @@ const HeroSlider = () => {
       modules={[Autoplay, Navigation, Pagination, A11y]}
       spaceBetween={50}
       autoplay={{
-        delay: 2000,
+        delay: 3000,
         disableOnInteraction: false,
       }}
       slidesPerView={1}
@@ -30,6 +31,7 @@ const HeroSlider = () => {
           <div className="hero-overlay"></div>
           <div className="hero-content text-neutral-content text-center">
             <div className="max-w-lg">
+              <Fade cascade>
               <h1 className="mb-5 text-5xl font-bold text-black">
                 Discover Your Path
               </h1>
@@ -38,7 +40,8 @@ const HeroSlider = () => {
                 Explore personalized guidance, resources, and tools to navigate
                 your professional journey with confidence.
               </p>
-              <Link to="/" clas>
+              </Fade>
+              <Link to="/">
                 <button className="btn bg-success-dark hover:bg-success-primary-500 text-black border-none">
                   Get Started
                 </button>
@@ -57,6 +60,7 @@ const HeroSlider = () => {
           <div className=""></div>
           <div className="hero-content text-neutral-content text-center">
             <div className="max-w-lg">
+              <Fade cascade>
               <h1 className="mb-5 text-5xl font-bold text-white">
                 Shape Your Future
               </h1>
@@ -65,7 +69,8 @@ const HeroSlider = () => {
                 insights. Your aspirations deserve the right direction—start
                 building your dream future today.
               </p>
-              <Link to="/" class>
+              </Fade>
+              <Link to="/" >
                 <button className="btn bg-success-dark hover:bg-success-primary-500 text-white border-none">
                   Get Started
                 </button>
@@ -84,6 +89,7 @@ const HeroSlider = () => {
           <div className=""></div>
           <div className="hero-content text-neutral-content text-center">
             <div className="max-w-lg">
+              <Fade cascade>
               <h1 className="mb-5 text-5xl font-bold text-white">
                 Empowering Career Choices
               </h1>
@@ -92,6 +98,7 @@ const HeroSlider = () => {
                 make informed decisions. Your success starts with the right
                 guidance—let’s take the first step together.
               </p>
+              </Fade>
               <Link to="/" clas>
                 <button className="btn bg-success-dark hover:bg-success-primary-500 text-white border-none">
                   Get Started
