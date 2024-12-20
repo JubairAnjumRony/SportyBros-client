@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { toast } from "react-toastify";
-
+import { FaGoogle } from "react-icons/fa6";
 
 const Login = () => {
     const navigate = useNavigate();
@@ -45,7 +45,7 @@ const Login = () => {
      
      
      return (
-         <div className="hero bg-base-200 min-h-screen">
+         <div className="hero bg-slate-300 min-h-screen">
          <div className="hero-content flex-col ">
            <div className="text-center lg:text-left">
              <h1 className="text-2xl font-bold">Login now!</h1>
@@ -68,10 +68,11 @@ const Login = () => {
                    <Link to="/forgetpass" className="label-text-alt link link-hover">Forgot password?</Link>
                  </label>
                </div>
-               <div className="form-control mt-6">
+               <div className="form-control mt-6 ">
                  <button type="submit" className="btn btn-primary">Login</button>
+                 <hr className="border-2 my-4"></hr>
                  <p>
-                 <button onClick={()=>handleGoogleSignIn()} className='btn'>Google</button>
+                 <button onClick={()=>handleGoogleSignIn()} className='btn btn-warning w-full bg-red-600'><span className="text-black flex gap-2 justify-between">Login With Google <FaGoogle /></span></button>
                  </p>
                </div>
              </form>
