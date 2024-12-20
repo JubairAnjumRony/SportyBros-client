@@ -77,7 +77,7 @@ const Login = () => {
                  className="input input-bordered" autoComplete='current-password'required />
                  <label className="label">
 
-                   <Link to="/forgetpass" className="label-text-alt link link-hover">Forgot password?</Link>
+                   <Link to="" className="label-text-alt link link-hover">Forgot password?</Link>
                  </label>
                </div>
                <div className="form-control mt-6 ">

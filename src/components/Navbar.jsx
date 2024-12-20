@@ -85,15 +85,15 @@ const Navbar = () => {
             </ul>
           </div>
        
-          <NavLink to ="/"className="btn btn-ghost text-xl">Sporty Bros</NavLink>
+          <NavLink to ="/"className="btn btn-ghost text-lg text-xl">Sporty Bros</NavLink>
           
         </div>
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-center  hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
            {links}
           </ul>
         </div>
-        <div className="navbar-end flex gap-4">
+        <div className="navbar-end flex flex-wrap sm:text-lg items-center md:flex gap-4">
 
 
         <label className="grid cursor-pointer place-items-center">
@@ -141,7 +141,7 @@ const Navbar = () => {
      <div className="relative group">
    
        <img
-         className="w-10 h-10 rounded-full cursor-pointer"
+         className="w-8 h-8 lg:w-10 h-10 rounded-full cursor-pointer"
          src={user?.photoURL}
          alt="User Avatar"
          title="Profile Picture"
