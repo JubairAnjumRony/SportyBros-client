@@ -25,7 +25,7 @@ const HeroSlider = () => {
         <div
           className="hero h-[400px] rounded-3xl shadow-2xl"
           style={{
-            backgroundImage: "url('https://i.ibb.co.com/J2N4mG4/cool-background-2.jpg')",
+            backgroundImage: "url('https://i.ibb.co.com/3yrw8pG/largest-sports-equipment-companies-jpg.webp')",
           }}
         >
           <div className="hero-overlay"></div>
@@ -52,9 +52,9 @@ const HeroSlider = () => {
       </SwiperSlide>
       <SwiperSlide>
         <div
-          className="hero h-[400px] rounded-3xl shadow-2xl"
+          className="hero h-[400px] rounded-3xl shadow-2xl "
           style={{
-            backgroundImage: "url('https://i.ibb.co.com/BN13BZ8/cool-background.png')",
+            backgroundImage: "url('https://i.ibb.co.com/nLNGWJt/kenny-nguy-n-Srqa975-RQDY-unsplash.jpg')",
           }}
         >
           <div className=""></div>
@@ -71,7 +71,7 @@ const HeroSlider = () => {
               </p>
               </Fade>
               <Link to="/" >
-                <button className="btn bg-success-dark hover:bg-success-primary-500 text-white border-none">
+                <button className="btn bg-success-dark hover:bg-success-primary-500 text-black border-none">
                   Get Started
                 </button>
               </Link>
@@ -83,7 +83,7 @@ const HeroSlider = () => {
         <div
           className="hero h-[400px] rounded-3xl shadow-2xl"
           style={{
-            backgroundImage: "url('https://i.ibb.co.com/nMsHJQr/cool-background-1.png')",
+            backgroundImage: "url('https://i.ibb.co.com/nLNGWJt/kenny-nguy-n-Srqa975-RQDY-unsplash.jpg')",
           }}
         >
           <div className=""></div>
@@ -100,7 +100,7 @@ const HeroSlider = () => {
               </p>
               </Fade>
               <Link to="/" clas>
-                <button className="btn bg-success-dark hover:bg-success-primary-500 text-white border-none">
+                <button className="btn bg-success-dark hover:bg-success-primary-500 text-black border-none">
                   Get Started
                 </button>
               </Link>
