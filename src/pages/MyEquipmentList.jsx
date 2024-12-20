@@ -71,7 +71,7 @@ const handleDelete = (id) => {
   
   
     const handleUpdate = (id) => {
-      navigate(`/updateequipments/${id}`);
+      navigate(`/updateequipment/${id}`);
     };
   
     return (

@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import HeroSlider from "../components/HeroSlider";
 import { useState } from "react";
 import Equipment from "../components/Equipment";
+import FeaturedCategories from "../components/FeaturedCategories";
 
 
 const Home = () => {
@@ -9,7 +10,7 @@ const Home = () => {
     console.log(loader);
     const [equipments,setEquipments] = useState(loader);
     return (
-        <div>
+        <div className="w-3/4 mx-auto">
      <div className = "mt-6 mb-6">
          <HeroSlider/>
      </div>
@@ -24,6 +25,10 @@ const Home = () => {
                     </Equipment>
                 ))
             }
+         </div>
+
+         <div className="mt-8 mb-8">
+          <FeaturedCategories/>
          </div>
       </div>
 

@@ -18,6 +18,7 @@ import AllEquipment from './pages/AllEquipment.jsx';
 import Details from './pages/Details.jsx';
 import MyEquipmentList from './pages/MyEquipmentList.jsx';
 import { ToastContainer } from 'react-toastify';
+import UpdateEquipments from './pages/UpdateEquipments.jsx';
 
 const router = createBrowserRouter([
   {
@@ -59,12 +60,13 @@ const router = createBrowserRouter([
     {
       path:"/myequipments",
       element:<PrivateRoute><MyEquipmentList></MyEquipmentList></PrivateRoute>,
-
+     
     },
 
     {
-      path:"/updateequipments/:id",
-      element:<PrivateRoute><AddEquipment></AddEquipment></PrivateRoute>,
+      path:"/updateequipment/:id",
+      element:<PrivateRoute><UpdateEquipments></UpdateEquipments></PrivateRoute>,
+      loader: ({params}) => fetch(`http://localhost:3000/updateequipment/${params.id}`),
     }
 
 
