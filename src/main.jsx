@@ -29,7 +29,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: < Home/>,
-        loader: () => fetch('http://localhost:3000/allequipments'),
+        loader: () => fetch('https://server-side-alpha-rust.vercel.app/allequipments'),
       },
     
     {
@@ -48,12 +48,12 @@ const router = createBrowserRouter([
     {
     path:"/allequipments",
     element:<AllEquipment></AllEquipment>,
-    loader: () => fetch('http://localhost:3000/allequipments'),
+    loader: () => fetch('https://server-side-alpha-rust.vercel.app/allequipments'),
     },
     {
       path:"/details/:id",
       element:<PrivateRoute><Details></Details></PrivateRoute>,
-      loader: ({params}) => fetch(`http://localhost:3000/details/${params.id}`),
+      loader: ({params}) => fetch(`https://server-side-alpha-rust.vercel.app/details/${params.id}`),
 
     },
 
@@ -66,7 +66,7 @@ const router = createBrowserRouter([
     {
       path:"/updateequipment/:id",
       element:<PrivateRoute><UpdateEquipments></UpdateEquipments></PrivateRoute>,
-      loader: ({params}) => fetch(`http://localhost:3000/updateequipment/${params.id}`),
+      loader: ({params}) => fetch(`https://server-side-alpha-rust.vercel.app/updateequipment/${params.id}`),
     }
 
 

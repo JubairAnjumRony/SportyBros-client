@@ -18,7 +18,7 @@ const UpdateEquipments = () => {
     const navigate = useNavigate();
   
     // useEffect(() => {
-    //   fetch(`http://localhost:3000/details/${id}`)
+    //   fetch(`https://server-side-alpha-rust.vercel.app/details/${id}`)
     //     .then((res) => res.json())
     //     .then((data) => setEquipment(data));
     // }, [id]);
@@ -44,7 +44,7 @@ const UpdateEquipments = () => {
     const updatedData ={image,itemName,categoryName,description,price,rating,customization,processingTime,stockStatus,userEmail,userName};
     console.log(updatedData);
   
-      fetch(`http://localhost:3000/updateequipment/${loadUser._id}`, {
+      fetch(`https://server-side-alpha-rust.vercel.app/updateequipment/${loadUser._id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updatedData),

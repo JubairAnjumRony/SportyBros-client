@@ -32,7 +32,7 @@ const AddEquipment = () => {
     
 
 
-    fetch('http://localhost:3000/addequipments',{
+    fetch('https://server-side-alpha-rust.vercel.app/addequipments',{
         method:'POST',
         headers:{
         'Content-Type': 'application/json',

@@ -12,7 +12,7 @@ const MyEquipmentList = () => {
     const navigate = useNavigate();
   
     useEffect(() => {
-      fetch(`http://localhost:3000/myequipments/${user.email}`)
+      fetch(`https://server-side-alpha-rust.vercel.app/myequipments/${user.email}`)
         .then((res) => res.json())
         .then((data) => setEquipments(data))
         .catch((error) => toast.error("Failed to fetch your equipment list.",error.message));
@@ -20,7 +20,7 @@ const MyEquipmentList = () => {
   
 //     const handleDelete = (id) => {
 //       if (confirm("Are you sure you want to delete this equipment?")) {
-//         fetch(`http://localhost:3000/deleteequipment/${id}`, {
+//         fetch(`https://server-side-alpha-rust.vercel.app/deleteequipment/${id}`, {
 //           method: "DELETE",
 //         })
 //           .then((res) => res.json())
@@ -50,7 +50,7 @@ const handleDelete = (id) => {
     }).then((result) => {
         if (result.isConfirmed) {
     // if (confirm("Are you sure you want to delete this equipment?")) 
-      fetch(`http://localhost:3000/deleteequipment/${id}`, {
+      fetch(`https://server-side-alpha-rust.vercel.app/deleteequipment/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
