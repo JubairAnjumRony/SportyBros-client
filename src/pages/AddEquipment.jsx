@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
+import { Tooltip } from 'react-tooltip';
+import 'react-tooltip/dist/react-tooltip.css';
 
 
 
@@ -115,7 +117,8 @@ const AddEquipment = () => {
         <input type="text" name="userName" value={user?.displayName || "Anonymous"} readOnly className="input input-bordered w-full bg-gray-100" />
       </div>
 
-      <button type="submit" className="btn btn-primary w-full">Submit</button>
+      <button data-tooltip-id="my-tooltip" data-tooltip-content="Submit to add to store!" type="submit" className="btn btn-primary w-full">Submit</button>
+      <Tooltip id="my-tooltip" />
     </form>
   );
 };

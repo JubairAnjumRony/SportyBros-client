@@ -18,36 +18,57 @@ const MyEquipmentList = () => {
         .catch((error) => toast.error("Failed to fetch your equipment list.",error.message));
     }, [user.email]);
   
-    const handleDelete = (id) => {
-      if (confirm("Are you sure you want to delete this equipment?")) {
-        fetch(`http://localhost:3000/deleteequipment/${id}`, {
-          method: "DELETE",
-        })
-          .then((res) => res.json())
-          .then(() => {
-            // toast.success("Equipment deleted successfully!");
+//     const handleDelete = (id) => {
+//       if (confirm("Are you sure you want to delete this equipment?")) {
+//         fetch(`http://localhost:3000/deleteequipment/${id}`, {
+//           method: "DELETE",
+//         })
+//           .then((res) => res.json())
+//           .then(data => {
+//             if(data.deletedCount>0){
+//             Swal.fire({
+//                 title: "Deleted!",
+//                 text: "Equipment deleted successfully",
+//                 icon: "success",
+//             });
+//             setEquipments(equipments.filter((item) => item._id !== id));
+//         }
+//           })
+          
+//     };
+//  }
+
+const handleDelete = (id) => {
+    Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+        if (result.isConfirmed) {
+    // if (confirm("Are you sure you want to delete this equipment?")) 
+      fetch(`http://localhost:3000/deleteequipment/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) { // Correct spelling of "deletedCount"
             Swal.fire({
-                title: "Are you sure?",
-                text: "You won't be able to revert this!",
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#3085d6",
-                cancelButtonColor: "#d33",
-                confirmButtonText: "Yes, delete it!"
-              }).then((result) => {
-                if (result.isConfirmed) {
-                  Swal.fire({
-                    title: "Deleted!",
-                    text: "Your file has been deleted.",
-                    icon: "success"
-                  });
-                }
-              });
+              title: "Deleted!",
+              text: "Equipment deleted successfully",
+              icon: "success",
+            });
             setEquipments(equipments.filter((item) => item._id !== id));
-          })
-          .catch((error) => toast.error("Failed to delete equipment.",error.message));
-      }
-    };
+          } 
+        })
+    }
+})
+    
+  };
+  
   
     const handleUpdate = (id) => {
       navigate(`/updateequipments/${id}`);
