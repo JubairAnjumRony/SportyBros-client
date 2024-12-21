@@ -20,7 +20,7 @@ const Home = () => {
 
          <div className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-3/4 mx-auto mt-8 w-full">
             {
-                equipments.slice(0,6).map((equipment) =>(
+            equipments.slice(0,6).map((equipment) =>(
                     <Equipment key={equipment._id} equipment = {equipment}>
 
                     </Equipment>

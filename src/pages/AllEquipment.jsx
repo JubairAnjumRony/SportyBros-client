@@ -7,7 +7,7 @@ const AllEquipment = () => {
 
     const loader = useLoaderData();
     console.log(loader);
-    const {_id,itemName,category,image,price,description} = loader; 
+    // const {_id,itemName,category,image,price,description} = loader; 
     console.log(loader);
     const [equipments,setEquipments] = useState(loader);
 
@@ -16,8 +16,8 @@ const AllEquipment = () => {
       setEquipments(sortedEquipments);
     }
     return (
-   <div>
-      <div className="flex justify-end mt-8 w-3/4 mx-auto">
+   <div className="px-1 md:px-4 py-6">
+      <div className="flex justify-end w-full lg:w-3/4 mx-auto">
         <button onClick={handleSort} className="btn btn-primary">Sort By Price</button>
       </div>
       {/* <div className = "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 w-3/4 mx-auto mt-8">
@@ -32,8 +32,8 @@ const AllEquipment = () => {
        </div> */}
           
 
-          <div className="overflow-x-auto w-3/4 mx-auto">
-  <table className="table">
+          <div className="overflow-x-auto mt-6 w-full lg:w-3/4 mx-auto">
+  <table className="table table-Zebra w-full">
     {/* head */}
     <thead>
       <tr>
@@ -83,7 +83,7 @@ const AllEquipment = () => {
             {/* <Link to = {`/details/${item._id}`}>
           <button className="btn btn-primary btn-xs">ViewDetails</button>
           </Link> */}
-            <Link to={`/details/${item._id}`} className = "bg-blue-500 text-white p-2 rounded-md">View Details</Link>
+            <Link to={`/details/${item._id}`} className = "bg-blue-500 btn btn-sm btn-outline btn-primary">View Details</Link>
         </th>
       </tr>
    ) }
