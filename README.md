@@ -1,5 +1,9 @@
 # 🏆 Sporty-Bros
 
+## Website Demo
+![Landing Page](https://i.ibb.co.com/B5CYQVRy/Screenshot-2025-02-14-194401.png)
+
+
 Sporty-Bros is an advanced sports gear rental platform that allows users to browse, rent, and manage their favorite sports equipment with ease.
 
 ## 🔗 Live Demo  
